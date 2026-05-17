@@ -3,10 +3,24 @@ const videoWrap = document.getElementById('videoWrap');
 const video = document.getElementById('birthdayVideo');
 
 let opened = false;
+let dodgeCount = 0;
+
+const clearDodges = () => {
+  envelope.classList.remove('dodge-left', 'dodge-right');
+};
 
 envelope.addEventListener('click', () => {
   if (opened) return;
+
+  if (dodgeCount < 2) {
+    clearDodges();
+    envelope.classList.add(dodgeCount % 2 === 0 ? 'dodge-left' : 'dodge-right');
+    dodgeCount += 1;
+    return;
+  }
+
   opened = true;
+  clearDodges();
   envelope.classList.add('open');
 
   setTimeout(() => {
