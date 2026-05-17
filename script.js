@@ -16,6 +16,11 @@ envelope.addEventListener('click', () => {
     clearDodges();
     envelope.classList.add(dodgeCount % 2 === 0 ? 'dodge-left' : 'dodge-right');
     dodgeCount += 1;
+
+    setTimeout(() => {
+      clearDodges();
+    }, 350);
+
     return;
   }
 
