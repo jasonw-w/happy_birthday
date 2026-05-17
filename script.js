@@ -13,7 +13,7 @@ envelope.addEventListener('click', () => {
     videoWrap.classList.add('show');
     videoWrap.setAttribute('aria-hidden', 'false');
     video.play().catch(() => {
-      // Autoplay may be blocked; user can press play.
+      // If autoplay is blocked, user can tap the video.
     });
   }, 900);
 });
