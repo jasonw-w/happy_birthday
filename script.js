@@ -10,6 +10,7 @@ envelope.addEventListener('click', () => {
   envelope.classList.add('open');
 
   setTimeout(() => {
+    envelope.classList.add('hidden');
     videoWrap.classList.add('show');
     videoWrap.setAttribute('aria-hidden', 'false');
     video.play().catch(() => {
